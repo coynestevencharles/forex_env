@@ -5,7 +5,7 @@ The code for this project was based on [gym-anytrading](https://github.com/AminH
 
 This environment can be used with reinforcement learning such as those found in [Stable Baselines 3](https://stable-baselines3.readthedocs.io/en/master/).
 
-This environment is compatible with "ohlc" data, such as that provided by yfinance and many other apis, as well as more detailed data with both ask and bid prices. See the `df_type` parameter below.
+This environment is compatible with "ohlc" data, such as that provided by [yfinance](https://github.com/ranaroussi/yfinance) and many other apis, as well as more detailed data with both ask and bid prices. See the `df_type` parameter below.
 
 This environment includes counts of the currencies involved, a difference from the more abstract gym-anytrading. The currencies are also set as the USD-JPY pair by default, but this can easily be changed (simply replacing variable names and print text should suffice).
 
@@ -43,7 +43,7 @@ Properties:
 ```python
 import gym
 import pandas as pd
-from forex_env import ForexTradingEnv
+import ForexTradingEnv
 
 df = pd.read_csv(file_name) # Additional processing likely necessary
 
