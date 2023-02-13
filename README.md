@@ -42,7 +42,7 @@ Properties:
 ```python
 import gym
 import pandas as pd
-import ForexTradingEnv
+from forex_env import ForexTradingEnv
 
 df = pd.read_csv(file_name) # Additional processing likely necessary
 
@@ -81,7 +81,7 @@ env.render()
 
 ### Full Example with yfinance and Stable Baselines 3
 
-See the notebook here for an example using these libraries.
+See the notebook [here](https://github.com/coynestevencharles/forex_env/blob/main/example_yf_sb3.ipynb) for an example using these libraries.
 
 ### Adding Additional Features to the Observation Space ("Signal Features")
 
