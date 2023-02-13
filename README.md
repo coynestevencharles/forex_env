@@ -1,4 +1,4 @@
-Contains ForexTradingEnv, a flexible environment for currency trading with reinforcement learning. Follows the gym interface.
+Contains ForexTradingEnv, a flexible environment for currency trading with reinforcement learning. Follows the [OpenAI gym](https://www.gymlibrary.dev/) interface.
 
 The code for this project was based on [gym-anytrading](https://github.com/AminHP/gym-anytrading) and [Stock-Trading-Environment](https://github.com/notadamking/Stock-Trading-Environment).
 
@@ -14,7 +14,9 @@ Properties:
 
 > `df`: A pandas dataframe containing the information that the model will act on. It is passed in the constructor.
 
-> `df_type`: Either "ohlc" or "ask_bid", passed in the class constructor. This describes the price data in `df`. "ohlc" assumes exactly four price columns, named "open", "high", "low", and "close". This is similar to the format provided by yfinance and many other apis. "ask_bid" assumes exactly eight columns, named "ask_open", "ask_high", "ask_low", "ask_close", "bid_open", "bid_high", "bid_low", and "bid_close", and is suitable when you have separate ask and bid price data.
+> `df_type`: Either "ohlc" or "ask_bid", passed in the class constructor. This describes the price data in `df`. 
+> * "ohlc" assumes exactly four price columns, named "open", "high", "low", and "close". This is similar to the format provided by yfinance and many other apis. 
+> * "ask_bid" assumes exactly eight price columns, named "ask_open", "ask_high", "ask_low", "ask_close", "bid_open", "bid_high", "bid_low", and "bid_close", and is suitable when you have separate ask and bid price data.
 
 > `window_size`: Number of ticks (current and previous ticks) returned as a *Gym observation*. It is passed in the constructor.
 
