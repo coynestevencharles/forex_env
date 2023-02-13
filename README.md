@@ -1,5 +1,4 @@
-# ForexTradingEnv
-A flexible environment for currency trading with reinforcement learning. Follows the gym interface.
+Contains ForexTradingEnv, a flexible environment for currency trading with reinforcement learning. Follows the gym interface.
 
 The code for this project was based on [gym-anytrading](https://github.com/AminHP/gym-anytrading) and [Stock-Trading-Environment](https://github.com/notadamking/Stock-Trading-Environment).
 
