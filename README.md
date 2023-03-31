@@ -1,3 +1,5 @@
+# Forex Environment for Reinforment Learning
+
 Contains ForexTradingEnv, a flexible environment for currency trading with reinforcement learning. Follows the [OpenAI gym](https://www.gymlibrary.dev/) interface.
 
 The code for this project was based on [gym-anytrading](https://github.com/AminHP/gym-anytrading) and [Stock-Trading-Environment](https://github.com/notadamking/Stock-Trading-Environment).
@@ -13,9 +15,8 @@ This environment includes counts of the currencies involved, a difference from t
 Properties:
 
 > `df`: A pandas dataframe containing the information that the model will act on. It is passed in the constructor.
-
-> `df_type`: Either "ohlc" or "ask_bid", passed in the class constructor. This describes the price data in `df`. 
-> * "ohlc" assumes exactly four price columns, named "open", "high", "low", and "close". This is similar to the format provided by yfinance and many other apis. 
+> `df_type`: Either "ohlc" or "ask_bid", passed in the class constructor. This describes the price data in `df`.
+> * "ohlc" assumes exactly four price columns, named "open", "high", "low", and "close". This is similar to the format provided by yfinance and many other apis.
 > * "ask_bid" assumes exactly eight price columns, named "ask_open", "ask_high", "ask_low", "ask_close", "bid_open", "bid_high", "bid_low", and "bid_close", and is suitable when you have separate ask and bid price data.
 
 > `window_size`: Number of ticks (current and previous ticks) returned as a *Gym observation*. It is passed in the constructor.
@@ -87,6 +88,6 @@ See the notebook [here](https://github.com/coynestevencharles/forex_env/blob/mai
 
 ### Adding Additional Features to the Observation Space ("Signal Features")
 
-This is actually quite simple - any additional columns found in the `df` are considered signal features. You can add e.g. news sentiment columns, moving averages, or other financial indicators. Therefore, please make sure that the dataframe passed to the model contains only the 4 (or 8) price columns plus the data you intend as signal features.
+Any additional columns found in the `df` are considered signal features. You can add e.g. news sentiment columns, moving averages, or other financial indicators. Therefore, please make sure that the dataframe passed to the model contains only the 4 (or 8) price columns plus the data you intend as signal features.
 
-The code for the price and custom signal columns is separate, so you can easily treat them differently by editing the `_next_observation` method. This would allow one to e.g. internally scale price values only.
+The code for the price and custom signal columns is separate, so you can treat them differently by editing the `_next_observation` method. This would allow one to e.g. internally scale price values only.
